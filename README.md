@@ -42,8 +42,6 @@ The frontend is built using HTML and styled with CSS, while the backend runs on 
 
 ---
 
-Open your browser and visit:-
-http://127.0.0.1:5000/
 
 # Crop Prediction Project
 
