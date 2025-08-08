@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Prediction</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind:308" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:380" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='farm.jpg') }}");
+            background-size: cover; /* Prevent repeat */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            font-family: 'Arimo', sans-serif;
+        }
+
+        .login {
+            background: rgba(255, 255, 255, 0.85);
+            max-width: 450px;
+            margin: 100px auto;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-family: 'Pacifico', cursive;
+            color: #2d4d1f;
+        }
+
+        input[type="text"], button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #predi {
+            margin-top: 20px;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>🌾 Crop Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <input type="text" name="Nitrogen" placeholder="🌿 Nitrogen" required>
+            <input type="text" name="Phosphorus" placeholder="🧪 Phosphorus" required>
+            <input type="text" name="Potassium" placeholder="⚡ Potassium" required>
+            <input type="text" name="temperature" placeholder="🌡️ Temperature" required>
+            <input type="text" name="Ph" placeholder="🧬 pH" required>
+            <input type="text" name="humidity" placeholder="💧 Humidity" required>
+            <input type="text" name="rainfall" placeholder="☔ Rainfall" required>
+            <button type="submit">🌱 Predict</button>
+        </form>
+        <h1 id="predi">{{ prediction_text }}</h1>
+    </div>
+</body>
+</html>
