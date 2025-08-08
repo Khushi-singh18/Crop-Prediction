@@ -45,4 +45,11 @@ The frontend is built using HTML and styled with CSS, while the backend runs on 
 Open your browser and visit:-
 http://127.0.0.1:5000/
 
+# Crop Prediction Project
+
+🌱 [Live Demo on Render](https://crop-prediction-phc2.onrender.com)
+
+This project predicts the best crop to grow based on input conditions using machine learning.
+
+
 
